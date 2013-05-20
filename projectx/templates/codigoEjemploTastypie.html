@@ -1,0 +1,8 @@
+$.getJSON('http://localhost:8000/lisw/api/v1/notes/?format=json', function(data) {
+    var items = [];
+    $.each(data.objects, function(key, val) {
+        items.push('&lt;h4&gt;&lt;a href=&quot;' + val.resource_uri + '&quot;&gt;' + val.title + '&lt;/a&gt;&lt;/h4&gt;');
+        items.push('&lt;p&gt;' + val.content + '&lt;/p&gt;');
+    });
+    $('div.span12:last').append(items.join(''));
+});

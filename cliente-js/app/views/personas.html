@@ -1,0 +1,24 @@
+
+    <div class="page-header">
+        <h1>Personas <small>conoce a los ponentes</small></h1>
+    </div>
+    <div class="row-fluid">
+        <h2>Conferenciantes</h2>
+        <div class="well well-small span12" ng-repeat="conferenciante in conferenciantes">
+            <h4>{{ conferenciante.user.first_name }} {{ conferenciante.user.last_name }}</h4>
+            <address>
+                <strong>Email:</strong> {{ conferenciante.user.email }}<br>
+                <span class="label label-info"><i class="icon-white icon-map-marker"> </i>Localizacion</span> {{ conferenciante.mac_router }}<br>
+            </address>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <h2>Asistente</h2>
+        <div class="well well-small span12" ng-repeat="asistente in asistentes">
+            <h4>{{ asistente.user.first_name }} {{ asistente.user.last_name }}</h4>
+            <address>
+                <strong>Email:</strong> {{ asistente.user.email }}<br>
+                <span class="label label-info"><i class="icon-white icon-map-marker"> </i>Localizacion</span> {{ asistente.mac_router }}<br>
+            </address>
+        </div>
+    </div>

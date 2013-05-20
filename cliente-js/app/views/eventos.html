@@ -1,0 +1,17 @@
+
+    <div class="page-header">
+        <h1>Eventos <small>planifica tu dia</small></h1>
+    </div>
+    <div class="row-fluid">
+        <div class="well well-small span6" ng-repeat="evento in eventos">
+            <h4><a href="{{ evento.resource_uri }}">{{ evento.titulo }}</a></h4>
+            <address>
+                <strong>Sala:</strong> {{ evento.sala.nombre }}<br>
+                <span class="label label-info"><i class="icon-white icon-calendar"> </i>Fecha</span> {{ evento.fecha | date:'MM/dd/yyyy @ h:mma' }}<br>
+                <span class="label label-inverse"><i class="icon-white icon-user"> </i>Conferenciante</span>
+                {{ evento.conferenciante.user.first_name }} {{ evento.conferenciante.user.last_name }}<br>
+            </address>
+
+            <p><strong>Descripcion: </strong>{{ evento.descripcion }}</p>
+        </div>
+    </div>

@@ -1,0 +1,734 @@
+[
+    {
+        "pk": 1,
+        "model": "projectx.mapa",
+        "fields": {
+            "nombre": "Teleco",
+            "imagen": "mapas/clasesA-0.1.png"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-20",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "23"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-15",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "24"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-12",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "22"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-16",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "25"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-17",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "24"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-10",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "28"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-11",
+            "abierta": false,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "25"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-14",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "23"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-15",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "25"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-14",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "27"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-21",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "24"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-14",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "23"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "projectx.condicion",
+        "fields": {
+            "ruido_db": "-19",
+            "abierta": true,
+            "ip_camara": "192.168.1.1",
+            "temperatura": "25"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Laboratorio de Programaci\u00f3n",
+            "mapa": 1,
+            "condicion": 3,
+            "color": "#33B5E5",
+            "puntos": "6,30,220,30,220,112,6,112"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-128",
+            "mapa": 1,
+            "condicion": 4,
+            "color": "#AA66CC",
+            "puntos": "547,55,654,55,654,125,547,125"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Sal\u00f3n de Grados",
+            "mapa": 1,
+            "condicion": 5,
+            "color": "#99CC00",
+            "puntos": "536,125,653,125,653,194,536,194"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Sala de Juntas",
+            "mapa": 1,
+            "condicion": 6,
+            "color": "#FFBB33",
+            "puntos": "536,196,653,196,653,266,536,266"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "SR-1",
+            "mapa": 1,
+            "condicion": 7,
+            "color": "#CC0000",
+            "puntos": "548,286,618,286,618,342,548,342"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "SR-2",
+            "mapa": 1,
+            "condicion": 8,
+            "color": "#33B5E5",
+            "puntos": "620,286,654,286,654,342,620,342"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "SR-3",
+            "mapa": 1,
+            "condicion": 9,
+            "color": "#AA66CC",
+            "puntos": "405,215,510,215,510,266,405,266"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-135",
+            "mapa": 1,
+            "condicion": 10,
+            "color": "#CC0000",
+            "puntos": "13,288,118,288,118,356,13,356"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-134",
+            "mapa": 1,
+            "condicion": 11,
+            "color": "#FFBB33",
+            "puntos": "118,288,225,288,225,356,118,356"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-133",
+            "mapa": 1,
+            "condicion": 12,
+            "color": "#99CC00",
+            "puntos": "225,288,333,288,333,356,225,356"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-136",
+            "mapa": 1,
+            "condicion": 13,
+            "color": "#99CC00",
+            "puntos": "48,393,155,393,155,463,48,463"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-137",
+            "mapa": 1,
+            "condicion": 14,
+            "color": "#AA66CC",
+            "puntos": "155,393,261,393,261,463,155,463"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "projectx.sala",
+        "fields": {
+            "nombre": "Aula A-138",
+            "mapa": 1,
+            "condicion": 15,
+            "color": "#33B5E5",
+            "puntos": "261,393,370,393,370,463,261,463"
+        }
+    },
+    {
+        "pk": "another-first-post",
+        "model": "projectx.slugbasednote",
+        "fields": {
+            "content": "So it's a hamster-in-a-cat-in-a-dog kinda situation.",
+            "is_active": true,
+            "title": "Another First Post"
+        }
+    },
+    {
+        "pk": "first-post",
+        "model": "projectx.slugbasednote",
+        "fields": {
+            "content": "But not before the cat ate the hamster.",
+            "is_active": true,
+            "title": "First Post"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "auth.user",
+        "fields": {
+            "username": "johndoe",
+            "first_name": "",
+            "last_name": "",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "auth.user",
+        "fields": {
+            "username": "jesus",
+            "first_name": "Jesus",
+            "last_name": "de Mula Cano",
+            "is_active": true,
+            "is_superuser": true,
+            "is_staff": true,
+            "last_login": "2013-05-15T09:34:30.300Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "pbkdf2_sha256$10000$UXtziWPnKJqH$l8o2PtUb0fNqjE3Y3scEQKjdg6X4ZZWJeFLIBA9pMho=",
+            "email": "jesus@example.com",
+            "date_joined": "2013-05-15T09:34:30.300Z"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "auth.user",
+        "fields": {
+            "username": "xavier_ducrohet",
+            "first_name": "Xavier",
+            "last_name": "Ducrohet",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "auth.user",
+        "fields": {
+            "username": "tor_norbye",
+            "first_name": "Tor",
+            "last_name": "Norbye",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "auth.user",
+        "fields": {
+            "username": "sara_sinclair_brody",
+            "first_name": "Sara",
+            "last_name": "Sinclair Brody",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "auth.user",
+        "fields": {
+            "username": "rich_hyndman",
+            "first_name": "Rich",
+            "last_name": "Hyndman",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "auth.user",
+        "fields": {
+            "username": "matthew_xie",
+            "first_name": "Xie",
+            "last_name": "Matthew Xie",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "auth.user",
+        "fields": {
+            "username": "dan_galpin",
+            "first_name": "Dan",
+            "last_name": "Galpin",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "auth.user",
+        "fields": {
+            "username": "jaewoong_jung",
+            "first_name": "Jaewoong",
+            "last_name": "Jung",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "auth.user",
+        "fields": {
+            "username": "jennie_lees",
+            "first_name": "Jennie",
+            "last_name": "Lees",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "auth.user",
+        "fields": {
+            "username": "ficus_kirkpatrick",
+            "first_name": "Ficus",
+            "last_name": "Kirkpatrick",
+            "is_active": true,
+            "is_superuser": false,
+            "is_staff": false,
+            "last_login": "2013-05-15T09:34:30.293Z",
+            "groups": [],
+            "user_permissions": [],
+            "password": "this_is_not_a_valid_password_string",
+            "email": "john@doe.com",
+            "date_joined": "2013-05-15T09:34:30.293Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-135",
+            "user": 3
+        }
+    },
+    {
+        "pk": 2,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-135",
+            "user": 4
+        }
+    },
+    {
+        "pk": 3,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-135",
+            "user": 5
+        }
+    },
+    {
+        "pk": 4,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-135",
+            "user": 6
+        }
+    },
+    {
+        "pk": 5,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-135",
+            "user": 7
+        }
+    },
+    {
+        "pk": 6,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-128",
+            "user": 8
+        }
+    },
+    {
+        "pk": 7,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-128",
+            "user": 9
+        }
+    },
+    {
+        "pk": 8,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "A-128",
+            "user": 10
+        }
+    },
+    {
+        "pk": 9,
+        "model": "projectx.conferenciante",
+        "fields": {
+            "mac_router": "SR-2",
+            "user": 11
+        }
+    },
+    {
+        "pk": 1,
+        "model": "projectx.asistente",
+        "fields": {
+            "mac_router": "A-135",
+            "user": 2,
+            "eventos": [1]
+        }
+    },
+    {
+        "pk": 1,
+        "model": "projectx.Evento",
+        "fields": {
+            "titulo": "What's New in Android Developer Tools",
+            "descripcion": "An in-depth tour of the Android development tools, with a closer look at everything new - along with tips and tricks for getting the most out of them.",
+            "fecha": "2013-05-15T12:45:00Z",
+            "fin": "2013-05-15T13:45:00Z",
+            "sala": 10,
+            "conferenciante": [3, 4]
+        }
+    },
+    {
+        "pk": 2,
+        "model": "projectx.Evento",
+        "fields": {
+            "titulo": "Best Practices for Bluetooth Development",
+            "descripcion": "Opinions on Bluetooth can divide a crowd, but the technology can connect them back together. This is an end-to-end session that gives a brief overview of core specifications and profiles before diving into Android Bluetooth support, best practices for development (with examples), and some features you may not be aware of.",
+            "fecha": "2013-05-15T13:55:00Z",
+            "fin": "2013-05-15T14:35:00Z",
+            "sala": 10,
+            "conferenciante": [5, 6, 7]
+        }
+    },
+    {
+        "pk": 3,
+        "model": "projectx.Evento",
+        "fields": {
+            "titulo": "Games Services in Practice",
+            "descripcion": "Practical tips for game developers from insiders within the Android team, including how to work with the developer dashboard from the beginning of development through multiple releases.",
+            "fecha": "2013-05-15T14:45:00Z",
+            "fin": "2013-05-15T13:25:00Z",
+            "sala": 6,
+            "conferenciante": [8, 9, 10]
+        }
+    },
+    {
+        "pk": 4,
+        "model": "projectx.Evento",
+        "fields": {
+            "titulo": "Volley: Easy, Fast Networking for Android",
+            "descripcion": "Volley is a library that makes networking for Android apps easier and most importantly, faster. We'll give an overview of how it works, common patterns that work well with it, and a walkthrough of how you can easily load thumbnail images for your ListView from the network in parallel.",
+            "fecha": "2013-05-15T15:50:00Z",
+            "fin": "2013-05-15T16:30:00Z",
+            "sala": 12,
+            "conferenciante": [10]
+        }
+    },
+    {
+        "pk": 1,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Movistar",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#0099CC",
+            "sala": 7
+        }
+    },
+    {
+        "pk": 2,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Orange",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#FF8800",
+            "sala": 6
+        }
+    },
+    {
+        "pk": 3,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Vodafone",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#CC0000",
+            "sala": 6
+        }
+    },
+    {
+        "pk": 4,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Canonical",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#FFBB33",
+            "sala": 5
+        }
+    },
+    {
+        "pk": 5,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "IBM",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#9933CC",
+            "sala": 4
+        }
+    },
+    {
+        "pk": 6,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Oracle",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#FF4444",
+            "sala": 3
+        }
+    },
+    {
+        "pk": 7,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Google",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#9933CC",
+            "sala": 3
+        }
+    },
+    {
+        "pk": 8,
+        "model": "projectx.Expositor",
+        "fields": {
+            "compania": "Microsoft",
+            "descripcion": "Empleo, publicidad... Todo esto te espera en nuestro expositorio. ¿Te atreves a pasarte?",
+            "color": "#AA66CC",
+            "sala": 3
+        }
+    },
+    {
+        "pk": 1,
+        "model": "projectx.note",
+        "fields": {
+            "updated": "2010-03-30T18:05:00Z",
+            "created": "2010-03-30T18:05:00Z",
+            "title": "First Post!",
+            "is_active": true,
+            "content": "This is my very first post using my shiny new API. Pretty sweet, huh?",
+            "user": 1,
+            "slug": "first-post"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "projectx.note",
+        "fields": {
+            "updated": "2010-03-31T18:05:00Z",
+            "created": "2010-03-31T18:05:00Z",
+            "title": "Another Post",
+            "is_active": true,
+            "content": "The dog ate my cat today. He looks seriously uncomfortable.",
+            "user": 1,
+            "slug": "another-post"
+        }
+    }
+]

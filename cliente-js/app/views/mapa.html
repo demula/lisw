@@ -1,0 +1,39 @@
+<div class="row-fluid">
+    <div class="span9">
+        <div id="container" ng-style="mapaStyle"></div>
+    </div>
+    <div class="span3" ng-hide="sala.condicion != undefined">
+        <h1>Hola, bienvenidos!</h1>
+        <p>Obtenga información de cualquier sala pulsando en ella. Están disponibles sus eventos, expositores y mucho más.</p>
+    </div>
+    <div class="span3 well well-small" ng-show="sala.condicion != undefined" ng-style="infoPanelStyle">
+        <div>
+            <h4><span class="label" ng-style="salaStyle"> · </span> <strong>{{ sala.nombre }}</strong></h4>
+            <i class="icon-user icon-large"></i>
+            <strong>Abierta:</strong> <span ng-show="sala.condicion.abierta">Sí, 20 visitantes</span><span ng-hide="sala.condicion.abierta">No</span><br/>
+            <i class="icon-tint icon-large"></i><strong>Temperatura:</strong> {{ sala.condicion.temperatura }}ºC <br/>
+            <i class="icon-volume-up icon-large"></i> <strong>Ruido:</strong> {{ sala.condicion.ruido_db }} dB <br/>
+        </div>
+        <div>
+            <h4>Próximos eventos en la sala</h4>
+            <p ng-hide="eventos_filtered.length != 0">No hay eventos programados para esta sala</p>
+            <div ng-show="eventos_filtered != 0">
+                <div class="well" ng-repeat="evento in eventos_filtered">
+                    <h5>{{ evento.titulo }}</h5>
+                    <span class="label label-info"><i class="icon-time icon-white icon-large"></i> {{ evento.fecha | date:'h:mma' }}</span>
+                    <p>{{ evento.descripcion }}</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h4>Expositores:</h4>
+            <p ng-hide="expositores_filtered.length != 0">No hay expositores en esta sala</p>
+            <div ng-show="expositores_filtered != 0">
+                <div class="well" ng-repeat="expositor in expositores_filtered">
+                    <h5>{{ expositor.compania }}</h5>
+                    <p>{{ expositor.descripcion }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

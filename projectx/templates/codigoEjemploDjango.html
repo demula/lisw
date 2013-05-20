@@ -1,0 +1,10 @@
+{% if latest_notes_list %}
+    {% for nota in latest_notes_list %}
+        &lt;h4&gt;
+          &lt;a href=&quot;/lisw/api/v1/notes/{{ nota.id }}/?format=json&quot;&gt;{{ nota.title }}&lt;/a&gt;
+        &lt;/h4&gt;
+        &lt;p&gt;{{ nota.content }}&lt;/p&gt;
+    {% endfor %}
+{% else %}
+    &lt;p&gt;No hay notas disponibles.&lt;/p&gt;
+{% endif %}
