@@ -6,6 +6,7 @@
 *.iml
 *.db
 .svn/
+venv
 
 *.pydevproject
 .project
