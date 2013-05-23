@@ -2,8 +2,8 @@
     <div class="page-header">
         <h1>Expositores <small>encuentra la empresa que buscas</small></h1>
     </div>
-    <div class="row-fluid">
-        <div class="well well-small span6" ng-repeat="expositor in expositores">
+    <div class="row-fluid" ng-repeat="row in expositoresRows">
+        <div class="well well-small span6" ng-repeat="expositor in row">
             <h4><a href="{{ expositor.resource_uri }}">{{ expositor.compania }}</a></h4>
             <address>
                 <strong>Sala:</strong> {{ expositor.sala.nombre }}<br>

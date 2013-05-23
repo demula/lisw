@@ -92,6 +92,17 @@ angular.module('clienteJsApp')
         //var e = Evento.get({eventoId:1}, function() {
         //  $scope.eventos.push(e);
         //});
+
+        $scope.eventosRows = [];
+        var updateEventosRow = function() {
+            //$scope.eventosRows = _.range(Math.ceil(eventos.objects.length/2));
+            var eventosRows = [];
+            for (var i = 0; i < Math.ceil($scope.eventos.length/2)+1; i++){
+               eventosRows.push($scope.eventos.slice(i*2, i*2+2));
+            }
+            $scope.eventosRows = eventosRows;
+        }
+        $scope.$watch('eventos', updateEventosRow, true);
     }])
     .controller('ExpositoresCtrl', ['$scope', '$resource', function ($scope, $resource) {
         var Expositor = $resource('/lisw/api/v2/expositores/:expositorId/?format=json', {expositorId:'@id'},
@@ -103,5 +114,15 @@ angular.module('clienteJsApp')
         //var e = Evento.get({eventoId:1}, function() {
         //  $scope.eventos.push(e);
         //});
+        $scope.expositoresRows = [];
+        var updateExpositoresRow = function() {
+            //$scope.expositoresRows = _.range(Math.ceil(expositores.objects.length/2));
+            var expositoresRows = [];
+            for (var i = 0; i < Math.ceil($scope.expositores.length/2)+1; i++){
+                expositoresRows.push($scope.expositores.slice(i*2, i*2+2));
+            }
+            $scope.expositoresRows = expositoresRows;
+        }
+        $scope.$watch('expositores', updateExpositoresRow, true);
     }]);
 

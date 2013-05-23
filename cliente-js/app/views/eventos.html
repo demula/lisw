@@ -2,8 +2,8 @@
     <div class="page-header">
         <h1>Eventos <small>planifica tu dia</small></h1>
     </div>
-    <div class="row-fluid">
-        <div class="well well-small span6" ng-repeat="evento in eventos">
+    <div class="row-fluid" ng-repeat="row in eventosRows">
+        <div class="well well-small span6" ng-repeat="evento in row">
             <h4><a href="{{ evento.resource_uri }}">{{ evento.titulo }}</a></h4>
             <address>
                 <strong>Sala:</strong> {{ evento.sala.nombre }}<br>
