@@ -13,26 +13,19 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-if(DEBUG):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'lisw.db',                      # Or path to database file if using sqlite3.
-            'TEST_NAME': 'lisw-test.db',
-            # The following settings are not used with sqlite3:
-            'USER': '',
-            'PASSWORD': '',
-            'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-            'PORT': '',                      # Set to empty string for default.
-        }
-    }
-else:
-    # Parse database configuration from $DATABASE_URL
-    import dj_database_url
-    DATABASES['default'] =  dj_database_url.config()
 
-    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'lisw.db',                      # Or path to database file if using sqlite3.
+        'TEST_NAME': 'lisw-test.db',
+        # The following settings are not used with sqlite3:
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'PORT': '',                      # Set to empty string for default.
+    }
+}
 
 FIXTURE_DIRS = (
     './projectx/fixtures/',
@@ -144,7 +137,6 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'tastypie',
     'projectx',
-    'gunicorn',
 )
 
 # A sample logging configuration. The only tangible logging
