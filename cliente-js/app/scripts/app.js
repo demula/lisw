@@ -19,6 +19,10 @@ angular.module('clienteJsApp', ['ui.bootstrap', 'ngCookies', 'ngResource'])
                 templateUrl: 'views/expositores.html',
                 controller: 'ExpositoresCtrl'
             })
+            .when('/administracion', {
+                templateUrl: 'views/administracion.html',
+                controller: 'AdministracionCtrl'
+            })
             .otherwise({
                 redirectTo: '/mapa'
             });

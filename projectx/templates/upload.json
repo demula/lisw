@@ -1,0 +1,1 @@
+{ {% if csrf_token %}"csrf":"{{ csrf_token }}",{% endif %}"MAX_FILE_SIZE":"300000"{% if errors %},"errors":"Your username and password didn't match. Please try again."{% endif %} }

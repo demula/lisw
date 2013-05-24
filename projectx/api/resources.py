@@ -13,7 +13,7 @@ class UserResource(ModelResource):
         resource_name = 'users'
         queryset = User.objects.all()
         authorization = Authorization()
-        excludes = ['password', 'is_active', 'is_staff', 'is_superuser']  # 'email'
+        excludes = ['password', 'is_active', 'is_superuser']  # 'email'
         allowed_methods = ['get']
 
 
@@ -23,7 +23,7 @@ class CondicionResource(ModelResource):
         queryset = Condicion.objects.all()
         authentication = MultiAuthentication(SessionAuthentication(), ApiKeyAuthentication())
         authorization = DjangoAuthorization()
-        allowed_methods = ['get','post','put']
+        allowed_methods = ['get', 'post', 'put']
 
 
 class SalaResource(ModelResource):
@@ -71,12 +71,13 @@ class AsistenteResource(ModelResource):
 
 class MapaResource(ModelResource):
     salas = fields.ToManyField(SalaResource, 'salas', related_name='mapa', full=True)
+    imagen = fields.FileField(attribute="imagen", null=True, blank=True)
 
     class Meta:
         resource_name = 'mapas'
         queryset = Mapa.objects.all()
         authorization = Authorization()
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post', 'put', 'delete']
 
 
 class ExpositorResource(ModelResource):

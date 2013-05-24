@@ -38,6 +38,7 @@
               <li class="{{ isActive('personas') }}"><a href="#/personas">Personas</a></li>
               <li class="{{ isActive('eventos') }}"><a href="#/eventos">Eventos</a></li>
               <li class="{{ isActive('expositores') }}"><a href="#/expositores">Expositores</a></li>
+              <li ng-show="isStaff" class="{{ isActive('expositores') }}"><a href="#/administracion" ng-bind="'Administración'"></a></li>
             </ul>
             <span ng-controller="loginCtrl" class="pull-right">
                  <form ng-hide="isUserLoggedIn()" class="navbar-form">
@@ -69,6 +70,10 @@
       </div>
     </div>
 
+    <!--
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="components/jquery-ui/jquery.ui.widget.js"></script>
+    -->
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-cookies/angular-cookies.js"></script>
@@ -78,10 +83,23 @@
     <script src="components/kinetic/kinetic-v4.5.1.min.js"></script>
     <script src="components/underscore/underscore-min.js"></script>
 
+    <!--
+    <script src="http://blueimp.github.com/JavaScript-Load-Image/load-image.min.js"></script>
+    <script src="http://blueimp.github.com/JavaScript-Canvas-to-Blob/canvas-to-blob.min.js"></script>
+    <script src="http://blueimp.github.com/cdn/js/bootstrap.min.js"></script>
+    <script src="http://blueimp.github.com/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
+    <script src="components/fileupload/jquery.iframe-transport.js"></script>
+    <script src="components/fileupload/jquery.fileupload.js"></script>
+    <script src="components/fileupload/jquery.fileupload-process.js"></script>
+    <script src="components/fileupload/jquery.fileupload-resize.js"></script>
+    <script src="components/fileupload/jquery.fileupload-validate.js"></script>
+    <script src="components/fileupload/jquery.fileupload-angular.js"></script>
+    -->
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/MapaCtrl.js"></script>
+    <script src="scripts/controllers/AdministracionCtrl.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. - ->

@@ -1,0 +1,32 @@
+<div class="row-fluid">
+    <form enctype="multipart/form-data">
+        <div class="span9">
+            <input file-bind type="file" name="files"/> <div class="btn btn-primary pull-right"> <i class="icon-upload"></i> Guardar mapa</div>
+            <!-- <button ng-click="uploadImagen()">Subir</button>-->
+            <div id="container" ng-style="mapaStyle"></div>
+        </div>
+        <div class="span3 well well-small" ng-style="infoPanelStyle">
+            <label for="mapaNombre">Titulo:</label><input id="mapaNombre" type="text" class="input-small" ng-model="mapa.nombre"/>
+            <label for="salaNombre">Nombre:</label><input id="salaNombre" type="text" class="input-small" ng-model="sala.nombre"/>
+            <label for="salaColor">Color:</label>
+            <select id="salaColor" class="input-small" ng-model="sala.color">
+                <option value="#33B5E5">Azul</option>
+                <option value="#AA66CC">Violeta</option>
+                <option value="#99CC00">Verde</option>
+                <option value="#FFBB33">Amarillo</option>
+                <option value="#FF4444">Rojo</option>
+            </select>
+            <label for="salaPuntos">Puntos:</label>
+            <div id="salaPuntos" ng-repeat="punto in puntos">
+                <span class="label">x:{{ punto[0] }}, y:{{ punto[1] }}</span>
+            </div>
+            <button class="btn" ng-click="addSala()"><i class="icon-plus"></i> Añadir sala</button>
+            <hr>
+            <h4>Salas:</h4>
+            <div class="well well-small" ng-repeat="sala in salas">
+               <p>{{ sala.nombre }} - {{ sala.color }}</p>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clienteJsApp')
-    .controller('navbarCtrl', ['$scope', '$location', function ($scope, $location) {
+    .controller('navbarCtrl', ['$scope', '$location', '$rootScope', function ($scope, $location, $rootScope) {
         $scope.isActive = function (elem) {
             return ($location.path().split('/')[1] == elem ? 'active' : '');
         };
@@ -31,6 +31,7 @@ angular.module('clienteJsApp')
                             if (data.errors == undefined){
                                 $rootScope.username = data.username;
                                 $rootScope.password = data.username;
+                                $rootScope.isStaff = data.staff == "True"? true : false;
                             } else {
                                 console.log(data.errors);
                             }
@@ -40,8 +41,10 @@ angular.module('clienteJsApp')
                             console.log('Error al autenticar');
                             $rootScope.username = undefined;
                             $rootScope.password = undefined;
+                            $rootScope.isStaff = undefined;
                             $scope.username = "";
                             $scope.password = "";
+                            $scope.isStaff = false;
                         });
                 })
                 .error(function(data, status, headers, config){
@@ -55,8 +58,10 @@ angular.module('clienteJsApp')
                     console.log(data);
                     $rootScope.username = undefined;
                     $rootScope.password = undefined;
+                    $rootScope.isStaff = undefined;
                     $scope.username = "";
                     $scope.password = "";
+                    $scope.isStaff = false;
                 })
                 .error(function(data, status, headers, config){
                     console.log(data);

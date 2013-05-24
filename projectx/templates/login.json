@@ -1,1 +1,1 @@
-{ {% if csrf_token %}"csrf":"{{ csrf_token }}",{% endif %}"username":"{{ username }}","password":"{{ password }}"{% if errors %},"errors":"Your username and password didn't match. Please try again."{% endif %} }
+{ {% if csrf_token %}"csrf":"{{ csrf_token }}",{% endif %}"username":"{{ username }}","password":"{{ password }}","staff":"{{ staff }}"{% if errors %},"errors":"Your username and password didn't match. Please try again."{% endif %} }

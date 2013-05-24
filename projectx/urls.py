@@ -9,5 +9,6 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
     url(r'^logout/$', views.logout_user, name="logout_user"),
     url(r'^login.json$', views.login, name="login"),
+    url(r'^upload.json$', views.upload, name="upload"),
     url(r'^$', views.index, name="index"),
 )
