@@ -93,7 +93,7 @@
                     $.ajax( {
                         url: 'http://localhost:8000/lisw/api/v2/condiciones/3/?format=json',
                         type: 'put',
-                        data: '{"abierta": false, "ruido_db": "-11","temperatura": "25"}',
+                        data: '{"abierta": true, "ruido_db": "-20","temperatura": "30"}',
                         headers: {
                             'X-CSRFToken' : csrf,
                             'Content-Type': 'application/json; charset=UTF-8'
