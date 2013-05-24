@@ -48,7 +48,7 @@ angular.module('clienteJsApp').directive('fileBind', function () {
 });
 
 angular.module('clienteJsApp')
-    .controller('AdministracionCtrl', ['$scope', '$resource', function ($scope, $resource) {
+    .controller('AdministracionCtrl', ['$scope', '$resource','$location', function ($scope, $resource, $location) {
         // Traer recursos
         $scope.Mapa = $resource('/lisw/api/v2/mapas/:mapaId/?format=json', {mapaId: '@id'},
             {
@@ -169,7 +169,9 @@ angular.module('clienteJsApp')
                                 salas_resources.push(resource.resource_uri);
                                 if (salas_resources.length == $scope.salas.length){
                                     $scope.mapa.salas = salas_resources;
-                                    $scope.mapa.$save();
+                                    $scope.mapa.$save(function(resource, putResponseHeaders){
+                                        $location.path("/mapa/"+resource.id);
+                                    });
                                 }
                             });
                         } 

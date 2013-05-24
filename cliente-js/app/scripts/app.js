@@ -3,7 +3,7 @@
 angular.module('clienteJsApp', ['ui.bootstrap', 'ngCookies', 'ngResource'])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
-            .when('/mapa', {
+            .when('/mapa/:mapaId', {
                 templateUrl: 'views/mapa.html',
                 controller: 'MapaCtrl'
             })
@@ -24,7 +24,7 @@ angular.module('clienteJsApp', ['ui.bootstrap', 'ngCookies', 'ngResource'])
                 controller: 'AdministracionCtrl'
             })
             .otherwise({
-                redirectTo: '/mapa'
+                redirectTo: '/mapa/1'
             });
     }])
     .run(['$rootScope', '$location', '$cookieStore', function ($rootScope, $location, $cookieStore) {

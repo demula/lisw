@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('clienteJsApp')
-    .controller('MapaCtrl', ['$scope', '$resource', function ($scope, $resource) {
+    .controller('MapaCtrl', ['$scope', '$resource', '$routeParams', function ($scope, $resource, $routeParams) {
         // Traer recursos
         var Mapa = $resource('/lisw/api/v2/mapas/:mapaId/?format=json', {mapaId: '@id'},
             {
@@ -29,8 +29,9 @@ angular.module('clienteJsApp')
         $scope.eventos_filtered = [];
         $scope.expositores_filtered = [];
 
-        var mapa = Mapa.get({mapaId: 1}, function (m) {
+        var mapa = Mapa.get({mapaId: $routeParams.mapaId}, function (m) {
             $scope.mapa = mapa;
+            $scope.img.src = "/"+mapa.imagen;
             $scope.drawSalas();
         });
 
@@ -43,20 +44,37 @@ angular.module('clienteJsApp')
         });
 
         // Pintar mapa
+        $scope.img = new Image();
+
+        $scope.img.onload = function () {
+            $scope.$apply(function () {
+                //$scope.mapaStyle['background-image'] = 'url(' + e.target.result + ')';
+                /*aquí va la resolución de la imagen*/
+                $scope.mapaStyle['width'] =  $scope.img.width + 'px';
+                $scope.mapaStyle['height'] =  $scope.img.height + 'px';
+                $scope.infoPanelStyle['height'] =  $scope.img.height + 'px';
+
+                $scope.stage.setWidth( $scope.img.width);
+                $scope.stage.setHeight( $scope.img.height);
+                $scope.stage.show();
+                $scope.stage.draw();
+            });
+        };
+
         $scope.mapaStyle = {
             'background-color': 'white',
             'background-position': '1px 0px',
             'background-repeat': 'no-repeat'
         };
         $scope.infoPanelStyle = {
-            'height': '469px',
+            'height': $scope.img.height,
             'overflow-y': 'scroll'
         };
         $scope.drawMapa = function () {
             $scope.mapaStyle['background-image'] = 'url("/' + $scope.mapa.imagen + '")';
             /*aquí va la resolución de la imagen*/
-            $scope.mapaStyle['width'] = '663px';
-            $scope.mapaStyle['height'] = '469px';
+            $scope.mapaStyle['width'] = $scope.img.width;
+            $scope.mapaStyle['height'] = $scope.img.height;
         }
 
         // Pintar salas en el mapa
@@ -89,8 +107,8 @@ angular.module('clienteJsApp')
         // Setup de kinetic
         $scope.stage = new Kinetic.Stage({
             container: 'container',//id del div
-            width: 663,  //aquí va la resolución de la imagen otra vez
-            height: 469
+            width: $scope.img.width,  //aquí va la resolución de la imagen otra vez
+            height: $scope.img.height
         });
         $scope.shapesLayer = new Kinetic.Layer();
         $scope.tooltipLayer = new Kinetic.Layer();
