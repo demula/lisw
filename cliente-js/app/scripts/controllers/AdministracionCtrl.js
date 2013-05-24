@@ -6,7 +6,9 @@ angular.module('clienteJsApp').directive('fileBind', function () {
             scope.$apply(function () {
                 //reset campos
                 scope.shapesLayer.children.splice(2,scope.salas.length);
-                scope.mapa = new scope.Mapa(); 
+                scope.mapa = new scope.Mapa();
+                var path_names = evt.target.value.split('\\')
+                scope.mapa.imagen = 'mapas/' + path_names[path_names.length-1];  
                 scope.salas = [];
                 scope.sala = new scope.Sala();
                 scope.sala.nombre = "";
@@ -21,7 +23,7 @@ angular.module('clienteJsApp').directive('fileBind', function () {
                 reader.onload = function (e) {
                     var img = new Image();
                     img.src = e.target.result;
-                    scope.mapa.imagen = e.target.result;
+                    //scope.mapa.imagen = e.target.result;
                     img.onload = function () {
                         scope.$apply(function () {
                             scope.mapaStyle['background-image'] = 'url(' + e.target.result + ')';
@@ -58,14 +60,24 @@ angular.module('clienteJsApp')
                 'get': {method: 'GET'},
                 'list': { method: 'GET', isArray: false }
             });
+            
+        $scope.Condicion = $resource('/lisw/api/v2/condiciones/:condicionId/?format=json', {condicionId: '@id'},
+            {
+                'get': {method: 'GET'},
+                'list': { method: 'GET', isArray: false }
+            });
 
         $scope.mapa = new $scope.Mapa();
         $scope.salas = [];
+        
+            
 
         $scope.sala = new $scope.Sala();
         $scope.sala.nombre = "";
         $scope.sala.color = "#33B5E5";
         $scope.sala.puntos = "";
+        
+        $scope.imagen = new Image();
         $scope.puntos = [];
 
 
@@ -135,6 +147,36 @@ angular.module('clienteJsApp')
 //                    console.log('Error al obtener codigo xcsrf para autenticacion');
 //                });
 
+        };
+
+        $scope.guardarMapa = function () {
+            console.log("Guardando mapa");
+            $scope.mapa.resource_uri = "";
+            var condiciones_resources = [];
+            var salas_resources = [];
+            for (var i = 0; i< $scope.salas.length;i++){
+                var condicion = new $scope.Condicion(); 
+                condicion.abierta = true;
+                condicion.ip_camara = "192.168.1."+i;
+                condicion.ruido_db = -10;
+                condicion.temperatura = 24;
+                condicion.$save(function(resource, putResponseHeaders) {
+                    condiciones_resources.push(resource.resource_uri);
+                    if (condiciones_resources.length == $scope.salas.length){
+                        for (var i = 0; i< $scope.salas.length;i++){
+                            $scope.salas[i].condicion = condiciones_resources[i];
+                            $scope.salas[i].$save(function(resource, putResponseHeaders) {
+                                salas_resources.push(resource.resource_uri);
+                                if (salas_resources.length == $scope.salas.length){
+                                    $scope.mapa.salas = salas_resources;
+                                    $scope.mapa.$save();
+                                }
+                            });
+                        } 
+                    }
+                    
+                });
+            }
         };
 
 

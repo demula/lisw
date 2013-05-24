@@ -21,19 +21,22 @@ class CondicionResource(ModelResource):
     class Meta:
         resource_name = 'condiciones'
         queryset = Condicion.objects.all()
-        authentication = MultiAuthentication(SessionAuthentication(), ApiKeyAuthentication())
-        authorization = DjangoAuthorization()
-        allowed_methods = ['get', 'post', 'put']
+        #authentication = MultiAuthentication(SessionAuthentication(), ApiKeyAuthentication())
+        #authorization = DjangoAuthorization()
+        authorization = Authorization()
+        allowed_methods = ['get', 'post', 'put', 'delete']
+        always_return_data = True
 
 
 class SalaResource(ModelResource):
-    condicion = fields.OneToOneField(CondicionResource, 'condicion', related_name='sala', full=True)
+    condicion = fields.OneToOneField(CondicionResource, 'condicion', related_name='sala', null=True, full=True)
 
     class Meta:
         resource_name = 'salas'
         queryset = Sala.objects.all()
         authorization = Authorization()
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post', 'put', 'delete']
+        always_return_data = True
 
 
 class ConferencianteResource(ModelResource):
@@ -70,7 +73,7 @@ class AsistenteResource(ModelResource):
 
 
 class MapaResource(ModelResource):
-    salas = fields.ToManyField(SalaResource, 'salas', related_name='mapa', full=True)
+    salas = fields.ToManyField(SalaResource, 'salas', related_name='mapa', null=True, full=True)
     imagen = fields.FileField(attribute="imagen", null=True, blank=True)
 
     class Meta:
@@ -78,6 +81,7 @@ class MapaResource(ModelResource):
         queryset = Mapa.objects.all()
         authorization = Authorization()
         allowed_methods = ['get', 'post', 'put', 'delete']
+        always_return_data = True
 
 
 class ExpositorResource(ModelResource):

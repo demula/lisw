@@ -1,7 +1,7 @@
 <div class="row-fluid">
     <form enctype="multipart/form-data">
         <div class="span9">
-            <input file-bind type="file" name="files"/> <div class="btn btn-primary pull-right"> <i class="icon-upload"></i> Guardar mapa</div>
+            <input file-bind type="file" name="files"/> <div class="btn btn-primary pull-right" ng-click="guardarMapa()"><i class="icon-upload"></i> Guardar mapa</div>
             <!-- <button ng-click="uploadImagen()">Subir</button>-->
             <div id="container" ng-style="mapaStyle"></div>
         </div>
