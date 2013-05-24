@@ -8,8 +8,8 @@
             <address>
                 <strong>Sala:</strong> {{ evento.sala.nombre }}<br>
                 <span class="label label-info"><i class="icon-white icon-calendar"> </i>Fecha</span> {{ evento.fecha | date:'MM/dd/yyyy @ h:mma' }}<br>
-                <span class="label label-inverse"><i class="icon-white icon-user"> </i>Conferenciante</span>
-                {{ evento.conferenciante.user.first_name }} {{ evento.conferenciante.user.last_name }}<br>
+                <span class="label label-inverse"><i class="icon-white icon-user"> </i>Conferenciantes</span><br>
+                <span ng-repeat="conferenciante in evento.conferenciante">{{ conferenciante.user.first_name }} {{ conferenciante.user.last_name }}<br></span>
             </address>
 
             <p><strong>Descripcion: </strong>{{ evento.descripcion }}</p>

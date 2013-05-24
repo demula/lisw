@@ -1,0 +1,18 @@
+function get_from_api(){
+    var csrf = "";
+    {% if csrf_token %}csrf = "{{ csrf_token }}";{% endif %}
+    $.ajax( {
+        url: 'http://localhost:8000/lisw/api/v2/condiciones/3/?format=json',
+        type: 'put',
+        data: '{"abierta": false, "ruido_db": "-11","temperatura": "25"}',
+        headers: {
+            'X-CSRFToken' : csrf,
+            'Content-Type': 'application/json; charset=UTF-8'
+        },
+        dataType: 'json',
+        success: function( data )
+        {
+            console.info(data);
+        }
+    } );
+}

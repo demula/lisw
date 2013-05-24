@@ -11,4 +11,5 @@ urlpatterns = patterns('',
     url(r'^login.json$', views.login, name="login"),
     url(r'^upload.json$', views.upload, name="upload"),
     url(r'^$', views.index, name="index"),
+    url(r'^sensor/$', views.sensorCondicionSala, name="sensorCondicionSala"),
 )

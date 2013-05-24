@@ -23,6 +23,11 @@ def index(request):
     context = {'latest_notes_list': latest_notes_list}
     return render(request, 'index.html', context)
 
+def sensorCondicionSala(request):
+    c = {}
+    c.update(csrf(request))
+    return render(request, 'sensorCondicionSala.html', c)
+
 
 def login(request):
     if request.method == 'GET':
